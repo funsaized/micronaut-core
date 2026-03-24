@@ -98,7 +98,7 @@ public class DefaultBodyAnnotationBinder<T> extends AbstractArgumentBinder<T> im
         if (body.isPresent()) {
             return () -> (Optional) conversionService.convert(body.get(), ConvertibleValues.class);
         }
-        return () -> Optional.empty();
+        return Optional::empty;
     }
 
     /**
